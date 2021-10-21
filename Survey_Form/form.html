@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<style>
+    body {
+        margin: 0px 0px;
+        background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: -200% -200%;
+        background-color: rgba(2, 68, 190, 0.815);
+        z-index: -5;
+        opacity: 1;
+        padding-bottom: 40px;
+        background-size: cover;
+    }
+
+    .heading {
+        text-transform: uppercase;
+        text-align: center;
+        color: rgb(238, 255, 0);
+        font-style: bold;
+        margin: 0px 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    div {
+        padding: 6px 6px;
+    }
+
+    label {
+        font-size: 1.3rem;
+        color: #ffffff;
+        font-style: bold;
+    }
+
+    .container {
+        margin-left: 50px;
+        margin-top: 50px;
+        width: 600px;
+        border: 3px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        opacity: 0.9;
+        z-index: 1;
+    }
+
+    div>input[type='text'],
+    input[type='email'] {
+        border-radius: 14px;
+        width: 400px;
+        height: 30px;
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    .form-group button {
+        text-align: center;
+        width: 150px;
+        display: block;
+        margin: 30px auto;
+        height: 30px;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    button:hover {
+        background-color: rgb(194, 198, 201);
+        color: black;
+        font-style: bold;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        color: rgb(238, 255, 0);
+        margin: 0px 0px;
+        text-transform: uppercase;
+    }
+
+    select {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        width: 100px;
+        text-align: center;
+        height: 30px;
+        border-radius: 8px;
+        margin-left: 10px;
+        font-size: 17px;
+    }
+
+    div .form-group {
+        margin: 30px;
+        margin-left: 50px;
+    }
+
+    .subHead {
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+
+    .form {
+        margin: 30px;
+        width: 500px;
+        text-align: center;
+    }
+
+    .subHead2 {
+        display: inline;
+        text-align: center;
+        background-color: rgb(255, 230, 7);
+        border: 2px solid black;
+        border-radius: 8px;
+
+    }
+
+    .head2 {
+        text-align: center;
+    }
+
+    input {
+        margin: 10px;
+    }
+
+    textarea {
+        width: 400px;
+        height: 30px;
+        padding: 0.5rem;
+        border-radius: 9px;
+        font-size: 1.1rem;
+    }
+</style>
+
+<body>
+    <h3 class="heading">Vidyavardhaka College Of Engineering</h3>
+    <h1>Web Development Form</h1>
+    <div class="container">
+        <h2 class="subHead" style="color: rgb(255, 230, 7); text-decoration: underline;">Enter your details</h2>
+        <div class="head2">
+            <h4 class="subHead2">Note : Enter your details appropriately.</h4>
+        </div>
+        <form action="hi.php">
+            <div class="form-group">
+                <label for="HTML">Name : </label>
+                <input type="text" name="name" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <label for="HTML">Email : </label>
+                <input type="email" name="email" placeholder="Enter your Mail ID">
+            </div>
+            <div class="form-group">
+                <label for="HTML">Phone : </label>
+                <input type="text" name="phone" placeholder="Enter your Number">
+            </div>
+            <div class="form">
+                <label for="HTML">Branch : </label>
+                <select id="Semester" name="sem">
+                    <option value="cs">CS</option>
+                    <option value="ai">AI</option>
+                    <option value="is">IS</option>
+                    <option value="ec">EC</option>
+                    <option value="me">ME</option>
+                    <option value="ee">EE</option>
+                    <option value="cv">CV</option>
+                </select>
+            </div>
+
+            <div class="form">
+                <label for="HTML">Semester : </label>
+                <select id="Semester" name="sem">
+                    <option value="1st">1</option>
+                    <option value="3rd">3</option>
+                    <option value="5th">5</option>
+                    <option value="7th">7</option>
+                </select>
+            </div>
+            <div class="form">
+                <label for="HTML">Section : </label>
+                <select id="section" name="sec">
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                </select>
+            </div>
+            <h3 style="color: rgb(255, 230, 7);">Enter the below details based on your understanding of Web Development
+            </h3>
+            <div class="form-group">
+                <label for="HTML">HTML : </label>
+                <input type="radio" name="html">
+                <label for="HTML">1</label>
+                <input type="radio" name="html">
+                <label for="HTML">2</label>
+                <input type="radio" name="html">
+                <label for="HTML">3</label>
+                <input type="radio" name="html">
+                <label for="HTML">4</label>
+                <input type="radio" name="html">
+                <label for="HTML">5</label>
+            </div>
+            <div class="form-group">
+                <label for="HTML">CSS : </label>
+                <input type="radio" name="css">
+                <label for="HTML">1</label>
+                <input type="radio" name="css">
+                <label for="HTML">2</label>
+                <input type="radio" name="css">
+                <label for="HTML">3</label>
+                <input type="radio" name="css">
+                <label for="HTML">4</label>
+                <input type="radio" name="css">
+                <label for="HTML">5</label>
+            </div>
+            <div class="form-group">
+                <label for="HTML">Java-Script : </label>
+                <input type="radio" name="java">
+                <label for="HTML">1</label>
+                <input type="radio" name="java">
+                <label for="HTML">2</label>
+                <input type="radio" name="java">
+                <label for="HTML">3</label>
+                <input type="radio" name="java">
+                <label for="HTML">4</label>
+                <input type="radio" name="java">
+                <label for="HTML">5</label>
+            </div>
+            <div class="form-group">
+                <label for="name" style="margin-bottom: 10px;">Questions ? </label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
