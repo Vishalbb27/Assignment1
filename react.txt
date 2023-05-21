@@ -150,3 +150,75 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+import React from "react";
+
+const CartItem = ({ item, removeFromCart }) => {
+  const { id, name, seller, price, description } = item;
+
+  const handleRemove = () => {
+    removeFromCart(id);
+  };
+
+  return (
+    <li className="cart-item">
+      <div>
+        <h3 className="item-name">{name}</h3>
+        <p className="item-seller">Seller: {seller}</p>
+        <p className="item-price">Price: ${price}</p>
+        <p className="item-description">{description}</p>
+      </div>
+      <button className="item-delete-button" onClick={handleRemove}>
+        Delete
+      </button>
+    </li>
+  );
+};
+
+export default CartItem;
+
+
+/* App.css */
+
+/* ...existing styles... */
+
+.cart {
+  /* ...existing styles... */
+}
+
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.item-name {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.item-seller,
+.item-price,
+.item-description {
+  margin: 0;
+  color: #555;
+}
+
+.item-delete-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.item-delete-button:hover {
+  background-color: #c82333;
+}
+
