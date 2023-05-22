@@ -1,24 +1,18 @@
-.search-bar {
-  display: flex;
-  align-items: center;
-  max-width: 300px;
-  margin-bottom: 20px;
-}
+const sortMedicines = (option) => {
+    let sortedMedicines = [...medicines];
 
-.search-input {
-  flex-grow: 1;
-  height: 40px;
-  padding: 8px;
-  border: none;
-  border-radius: 20px;
-  background-color: #f5f5f5;
-  font-size: 16px;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
+    if (option === 'priceAsc') {
+      sortedMedicines.sort((a, b) => a.price - b.price);
+    } else if (option === 'priceDesc') {
+      sortedMedicines.sort((a, b) => b.price - a.price);
+    } else if (option === 'nameAsc') {
+      sortedMedicines.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (option === 'nameDesc') {
+      sortedMedicines.sort((a, b) => b.name.localeCompare(a.name));
+    }
 
-.search-input:focus {
-  outline: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    dispatch({
+      type: 'SORT_MEDICINES',
+      payload: { sortedMedicines, sortOption: option },
+    });
+  };
