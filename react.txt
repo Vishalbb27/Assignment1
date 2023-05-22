@@ -1,200 +1,102 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title> Create Mobile Payment Page Design </title>
-<link rel= "stylesheet" href="style.css">
-</head>    
-<body>
-<div class= "app-container">
-    <div class="top-box">  
-    <p><span class="left-icon">&#x2196;</span>CHECKOUT<span class="right-icon">&#xb7;&#xb7;&#xb7;</span></p>
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const ConfirmationPage = ({ address, medicines, totalAmount }) => {
+  return (
+    <div className="confirmation-container">
+      <h2>Confirmation Page</h2>
+      <div className="address-section">
+        <h3>Delivery Address:</h3>
+        <p>{address}</p>
+      </div>
+      <div className="medicines-section">
+        <h3>Medicines:</h3>
+        <ul>
+          {medicines.map((medicine, index) => (
+            <li key={index}>
+              <span>{medicine.name}</span>
+              <span>{medicine.price}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="total-amount-section">
+        <h3>Total Amount:</h3>
+        <p>{totalAmount}</p>
+      </div>
+      <div className="thankyou-section">
+        <p>Thank you for using Medicare!</p>
+      </div>
+      <Link to="/" className="back-link">Back to Home</Link>
     </div>
-    
-    <div class="middle-box">
-        <h1>1599<span>$</span></h1>
-        <p>Pay To xyz Company Ltd</p>
-    </div>
-    
-    <div class="bottom-box">
-    <button type="button" class= "payment-option-btn">Pay with Paypal</button>
-    <button type="button" class= "payment-option-btn">Pay with Netbanking</button>
-    </div>
-    
-    <div class="card-details">
-    <p>Pay using credit or debit card</p>
-    <div class="card-num-field-group">
-    <label>Card Number</label><br>
-    <input type="text" class="card-num-field" placeholder="xxxx-xxxx-xxxx-xxxx">
-    </div>
-    
-    <div class="date-field-group">
-    <label>Expiry Date</label><br>
-    <input type="text" class="date-field" placeholder="mm">
-    <input type="text" class="date-field" placeholder="yyyy">
-    </div>
-    
-    <div class="cvc-field-group">
-    <label>CVC</label><br>
-    <input type="password" class="cvc-field" placeholder="xxx">
-    </div>
-        
-    <div class="name-field-group">
-    <label>Card Holder Name</label><br>
-    <input type="text" class="name-field" placeholder="Full Name">
-    </div>
-    
-    <button type="button" class="pay-btn">Pay Now</button>
-    
-    </div>
-    
-</div>
-</body>
-</html>
+  );
+};
+
+export default ConfirmationPage;
 
 
-
-*{
-    margin: 0;
-    padding: 0;
+.confirmation-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
-body{
-  font-family : sans-serif;
-}
-.app-container{
-    height: 660px;
-    width: 350px;
-    background-image: linear-gradient(#580e8f,#9200ff);
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    position: absolute;
+.confirmation-container h2 {
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.top-box{
-    height: 150px;
-    background-color: #9100fb;
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 80px;
-    
-
-}
-.top-box{
-    text-align: center;
-    padding-top: 20px;
-    color: #fff;
+.address-section,
+.medicines-section,
+.total-amount-section,
+.thankyou-section {
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.left-icon{
-    float: left;
-    margin-left: 30px;
+.confirmation-container h3 {
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.right-icon{
-    float: right;
-    margin-right: 30px;
+.confirmation-container ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.middle-box{
-    height: 150px;
-    background-image: linear-gradient(#580e8f,#9200ff);
-    margin: -70px 30px 20px;
-    text-align: center;
-    font-size: 12px;
-    border-radius: 10px;
-    color: #fff;
-}
-.middle-box h1{
-    padding-top: 30px;
-    padding-bottom: 30px;
-    font-size: 50px;
-    font-weight: normal;
-    
-    
+.confirmation-container li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.middle-box h1 span{
-    font-size: 20px;
-    margin-left: 5px;
-    bottom: 18px;
-    position : relative;
+.medicine-name {
+  font-weight: bold;
 }
 
-.payment-option-btn{
-    color: #fff;
-    margin: 5px 30px;
-    height: 30px;
-    width: 290px;
-    background-color: #9100fd;
-    border: none;
-    cursor: pointer;
+.medicine-price {
+  color: #555;
 }
 
-.card-details{
-    background: #fff;
-    color: #555;
-    margin: 10px 30px;
-    padding: 10px;
-}
-.card-details p{
-    font-size: 14px;
+.medicine-seller {
+  color: #888;
 }
 
-
-.card-details label{
-    font-size: 10px;
-    line-height: 20px;
+.confirmation-container p {
+  color: #555;
 }
 
-.card-num-field-group{
-    margin-top: 10px;  
+.back-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.date-field-group{
-    margin-top: 10px;
-    display: inline-block;
+.back-link:hover {
+  background-color: #45a049;
 }
-
-.cvc-field-group{
-    margin-top: 10px;
-    display: inline-block;
-    float: right;
-}
-
-
-.name-field-group{
-    margin-top: 10px;
-}
-
-.card-num-field, .name-field{
-    width: 260px;
-    
-}
-
-.date-field, .cvc-field{
-    width: 70px;
-}
-
-.card-details input{
-    border: 1px solid #ccc;
-    height: 22px;
-    padding: 5px;
-    font-size: 10px;
-}
-
-.card-details input::placeholder{
-    color: #ccc;
-}
-
-
-.pay-btn{
-    width: 270px;
-    color: #fff;
-    margin-top: 20px;
-    height: 30px;
-    background-color: #9100fd;
-    border: none;
-    cursor: pointer;
-}
-
-
