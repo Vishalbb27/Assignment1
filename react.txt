@@ -1,167 +1,200 @@
-<div class="container">
-  <h1>Shipping</h1>
-  <p>Please enter your shipping details.</p>
-  <hr />
-  <div class="form">
+<!DOCTYPE html>
+<html>
+<head>
+<title> Create Mobile Payment Page Design </title>
+<link rel= "stylesheet" href="style.css">
+</head>    
+<body>
+<div class= "app-container">
+    <div class="top-box">  
+    <p><span class="left-icon">&#x2196;</span>CHECKOUT<span class="right-icon">&#xb7;&#xb7;&#xb7;</span></p>
+    </div>
     
-  <div class="fields fields--2">
-    <label class="field">
-      <span class="field__label" for="firstname">First name</span>
-      <input class="field__input" type="text" id="firstname" value="John" />
-    </label>
-    <label class="field">
-      <span class="field__label" for="lastname">Last name</span>
-      <input class="field__input" type="text" id="lastname" value="Doe" />
-    </label>
-  </div>
-  <label class="field">
-    <span class="field__label" for="address">Address</span>
-    <input class="field__input" type="text" id="address" />
-  </label>
-  <label class="field">
-    <span class="field__label" for="country">Country</span>
-    <select class="field__input" id="country">
-      <option value=""></option>
-      <option value="unitedstates">United States</option>
-    </select>
-  </label>
-  <div class="fields fields--3">
-    <label class="field">
-      <span class="field__label" for="zipcode">Zip code</span>
-      <input class="field__input" type="text" id="zipcode" />
-    </label>
-    <label class="field">
-      <span class="field__label" for="city">City</span>
-      <input class="field__input" type="text" id="city" />
-    </label>
-    <label class="field">
-      <span class="field__label" for="state">State</span>
-      <select class="field__input" id="state">
-        <option value=""></option>
-      </select>
-    </label>
-  </div>
-  </div>
-  <hr>
-  <button class="button">Continue</button>
+    <div class="middle-box">
+        <h1>1599<span>$</span></h1>
+        <p>Pay To xyz Company Ltd</p>
+    </div>
+    
+    <div class="bottom-box">
+    <button type="button" class= "payment-option-btn">Pay with Paypal</button>
+    <button type="button" class= "payment-option-btn">Pay with Netbanking</button>
+    </div>
+    
+    <div class="card-details">
+    <p>Pay using credit or debit card</p>
+    <div class="card-num-field-group">
+    <label>Card Number</label><br>
+    <input type="text" class="card-num-field" placeholder="xxxx-xxxx-xxxx-xxxx">
+    </div>
+    
+    <div class="date-field-group">
+    <label>Expiry Date</label><br>
+    <input type="text" class="date-field" placeholder="mm">
+    <input type="text" class="date-field" placeholder="yyyy">
+    </div>
+    
+    <div class="cvc-field-group">
+    <label>CVC</label><br>
+    <input type="password" class="cvc-field" placeholder="xxx">
+    </div>
+        
+    <div class="name-field-group">
+    <label>Card Holder Name</label><br>
+    <input type="text" class="name-field" placeholder="Full Name">
+    </div>
+    
+    <button type="button" class="pay-btn">Pay Now</button>
+    
+    </div>
+    
 </div>
+</body>
+</html>
 
-@import url("https://rsms.me/inter/inter.css");
 
-:root {
-  --color-gray: #737888;
-  --color-lighter-gray: #e3e5ed;
-  --color-light-gray: #f7f7fa;
-}
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-html {
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  box-sizing: border-box;
+body{
+  font-family : sans-serif;
+}
+.app-container{
+    height: 660px;
+    width: 350px;
+    background-image: linear-gradient(#580e8f,#9200ff);
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
 }
 
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
+.top-box{
+    height: 150px;
+    background-color: #9100fb;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    
+
+}
+.top-box{
+    text-align: center;
+    padding-top: 20px;
+    color: #fff;
 }
 
-body {
-  margin: 0;
+.left-icon{
+    float: left;
+    margin-left: 30px;
 }
 
-h1 {
-  margin-bottom: 1rem;
+.right-icon{
+    float: right;
+    margin-right: 30px;
 }
 
-p {
-  color: var(--color-gray);
+.middle-box{
+    height: 150px;
+    background-image: linear-gradient(#580e8f,#9200ff);
+    margin: -70px 30px 20px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 10px;
+    color: #fff;
+}
+.middle-box h1{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 50px;
+    font-weight: normal;
+    
+    
 }
 
-hr {
-  height: 1px;
-  width: 100%;
-  background-color: var(--color-light-gray);
-  border: 0;
-  margin: 2rem 0;
+.middle-box h1 span{
+    font-size: 20px;
+    margin-left: 5px;
+    bottom: 18px;
+    position : relative;
 }
 
-.container {
-  max-width: 40rem;
-  padding: 10vw 2rem 0;
-  margin: 0 auto;
-  height: 100vh;
+.payment-option-btn{
+    color: #fff;
+    margin: 5px 30px;
+    height: 30px;
+    width: 290px;
+    background-color: #9100fd;
+    border: none;
+    cursor: pointer;
 }
 
-.form {
-  display: grid;
-  grid-gap: 1rem;
+.card-details{
+    background: #fff;
+    color: #555;
+    margin: 10px 30px;
+    padding: 10px;
+}
+.card-details p{
+    font-size: 14px;
 }
 
-.field {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--color-lighter-gray);
-  padding: .5rem;
-  border-radius: .25rem;
+
+.card-details label{
+    font-size: 10px;
+    line-height: 20px;
 }
 
-.field__label {
-  color: var(--color-gray);
-  font-size: 0.6rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem
+.card-num-field-group{
+    margin-top: 10px;  
 }
 
-.field__input {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  font-weight: bold;
-  font-size: 1rem;
-  width: 100%;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-}
-.field:focus-within {
-  border-color: #000;
+.date-field-group{
+    margin-top: 10px;
+    display: inline-block;
 }
 
-.fields {
-  display: grid;
-  grid-gap: 1rem;
-}
-.fields--2 {
-  grid-template-columns: 1fr 1fr;
-}
-.fields--3 {
-  grid-template-columns: 1fr 1fr 1fr;
+.cvc-field-group{
+    margin-top: 10px;
+    display: inline-block;
+    float: right;
 }
 
-.button {
-  background-color: #000;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: block;
-  color: #fff;
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.25rem;
-  border: 0;
-  cursor: pointer;
-  outline: 0;
+
+.name-field-group{
+    margin-top: 10px;
 }
-.button:focus-visible {
-  background-color: #333;
+
+.card-num-field, .name-field{
+    width: 260px;
+    
 }
+
+.date-field, .cvc-field{
+    width: 70px;
+}
+
+.card-details input{
+    border: 1px solid #ccc;
+    height: 22px;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.card-details input::placeholder{
+    color: #ccc;
+}
+
+
+.pay-btn{
+    width: 270px;
+    color: #fff;
+    margin-top: 20px;
+    height: 30px;
+    background-color: #9100fd;
+    border: none;
+    cursor: pointer;
+}
+
+
