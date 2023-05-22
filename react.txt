@@ -1,4 +1,8 @@
-
+:root {
+  --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+  --gray: #34495e;
+  --darkgray: #2c3e50;
+}
 select {
   /* Reset Select */
   appearance: none;
