@@ -1,224 +1,24 @@
-import React from "react";
-
-const MedicineItem = ({ medicine, addToCart }) => {
-  return (
-    <div className="medicine-item">
-      <h2>{medicine.name}</h2>
-      <p>Seller: {medicine.seller}</p>
-      <p>Price: ${medicine.price}</p>
-      <p>{medicine.description}</p>
-      <button onClick={() => addToCart(medicine)}>Add to Cart</button>
-    </div>
-  );
-};
-
-export default MedicineItem;
-
-
-import React from "react";
-import MedicineItem from "./MedicineItem";
-import medicineData from "./MedicineData";
-
-const MedicineList = ({ addToCart }) => {
-  return (
-    <div className="medicine-list">
-      {medicineData.map((medicine) => (
-        <MedicineItem key={medicine.id} medicine={medicine} addToCart={addToCart} />
-      ))}
-    </div>
-  );
-};
-
-export default MedicineList;
-
-
-import React from "react";
-
-const Cart = ({ cartItems }) => {
-  return (
-    <div className="cart">
-      <h2>Cart</h2>
-      <ul>
-        {cartItems.map((item) => (
-          <li key={item.id}>
-            {item.name} - ${item.price}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default Cart;
-
-
-import React, { useState } from "react";
-import MedicineList from "./MedicineList";
-import Cart from "./Cart";
-
-const App = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToCart = (medicine) => {
-    setCartItems([...cartItems, medicine]);
-  };
-
- 
-
-
-/* App.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.medicine-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
-
-.medicine-item {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.medicine-item h2 {
-  font-size: 24px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.medicine-item p {
-  margin: 0;
-  color: #555;
-}
-
-.medicine-item button {
-  display: block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.medicine-item button:hover {
-  background-color: #0056b3;
-}
-
-.cart {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.cart h2 {
-  font-size: 24px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.cart ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.cart li {
-  margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  .medicine-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-import React from "react";
-
-const CartItem = ({ item, removeFromCart }) => {
-  const { id, name, seller, price, description } = item;
-
-  const handleRemove = () => {
-    removeFromCart(id);
-  };
-
-  return (
-    <li className="cart-item">
-      <div>
-        <h3 className="item-name">{name}</h3>
-        <p className="item-seller">Seller: {seller}</p>
-        <p className="item-price">Price: ${price}</p>
-        <p className="item-description">{description}</p>
-      </div>
-      <button className="item-delete-button" onClick={handleRemove}>
-        Delete
-      </button>
-    </li>
-  );
-};
-
-export default CartItem;
-
-
-/* App.css */
-
-/* ...existing styles... */
-
-.cart {
-  /* ...existing styles... */
-}
-
-.cart-item {
+.search-bar {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  max-width: 300px;
   margin-bottom: 20px;
 }
 
-.item-name {
-  font-size: 24px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.item-seller,
-.item-price,
-.item-description {
-  margin: 0;
-  color: #555;
-}
-
-.item-delete-button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #dc3545;
-  color: #fff;
+.search-input {
+  flex-grow: 1;
+  height: 40px;
+  padding: 8px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
-.item-delete-button:hover {
-  background-color: #c82333;
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
