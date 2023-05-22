@@ -1,47 +1,289 @@
-:root {
-  --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
-  --gray: #34495e;
-  --darkgray: #2c3e50;
-}
-select {
-  /* Reset Select */
-  appearance: none;
-  outline: 0;
-  border: 0;
-  box-shadow: none;
-  /* Personalize */
-  flex: 1;
-  padding: 0 1em;
-  color: #fff;
-  background-color: var(--darkgray);
-  background-image: none;
-  cursor: pointer;
-}
-/* Remove IE arrow */
-select::-ms-expand {
-  display: none;
-}
-/* Custom Select wrapper */
-.select {
-  position: relative;
-  display: flex;
-  width: 20em;
-  height: 3em;
-  border-radius: .25em;
-  overflow: hidden;
-}
-/* Arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1em;
-  background-color: #34495e;
-  transition: .25s all ease;
-  pointer-events: none;
-}
-/* Transition */
-.select:hover::after {
-  color: #f39c12;
-}
+<div class="container">
+    <div class="form__name">Shipping and Billing Form</div>
+    <div class="form__container">
+        <section class="form__personal">
+            <div class="sections">
+                <div class="box">1</div><span>Personal Information</span>
+            </div>
+            <div class="personal--form">
+                <form class="form--name" action="">
+                    <div class="first">
+                        <label for="firstname">First Name</label>
+                        <input placeholder="e.g. Richard" id="firstname" type="text" />
+                    </div>
+                    <div class="last">
+                        <label for="firstname">Last Name</label>
+                        <input placeholder="e.g. Bovell" id="firstname" type="text" />
+                    </div>
+                    <div class="email">
+                        <label for="firstname">Email</label>
+                        <input placeholder="e.g. rb@apple.com" id="firstname" type="email" />
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="form__billing">
+            <div class="sections">
+                <div class="box billing">2</div><span>Billing Address</span>
+            </div>
+            <div class="shipping--form">
+                <form class="form--shipping" action="">
+                    <div class="row one">
+                        <div class="address">
+                            <label for="address-one">Address Line 1</label>
+                            <input placeholder="e.g. 1 Infinite Loop" id="address-one" type="text" />
+                        </div>
+                        <div class="address-two">
+                            <label for="address-two">Address Line 2</label>
+                            <input id="address-two" type="text" />
+                        </div>
+                    </div>
+                    <div class="row two">
+                        <div class="city">
+                            <label for="city">City</label>
+                            <input placeholder="e.g. Cupertino" id="city" type="text" />
+                        </div>
+                        <div class="state">
+                            <label for="state">State / Province / Region</label>
+                            <input placeholder="e.g. California" id="state" type="text" />
+                        </div>
+                    </div>
+                    <div class="row three">
+                        <div class="zip">
+                            <label for="zip">Zip / Postal Code</label>
+                            <input placeholder="e.g. 95014" id="zip" type="text" />
+                        </div>
+                        <div class="country">
+                            <label for="country">Country</label>
+                            <input placeholder="e.g. U.S.A" id="country" type="text" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="form__shipping">
+            <div class="sections">
+                <div class="box">3</div><span>Shipping Address</span>
+            </div>
+            <div class="shipping--form">
+                <form class="form--shipping" action="">
+                    <div class="row one">
+                        <div class="address">
+                            <label for="address-one">Address Line 1</label>
+                            <input placeholder="" id="address-one" type="text" />
+                        </div>
+                        <div class="address-two">
+                            <label for="address-two">Address Line 2</label>
+                            <input id="address-two" type="text" />
+                        </div>
+                    </div>
+                    <div class="row two">
+                        <div class="city">
+                            <label for="city">City</label>
+                            <input placeholder="" id="city" type="text" />
+                        </div>
+                        <div class="state">
+                            <label for="state">State / Province / Region</label>
+                            <input placeholder="" id="state" type="text" />
+                        </div>
+                    </div>
+                    <div class="row three">
+                        <div class="zip">
+                            <label for="zip">Zip / Postal Code</label>
+                            <input placeholder="" id="zip" type="text" />
+                        </div>
+                        <div class="country">
+                            <label for="country">Country</label>
+                            <input placeholder="" id="country" type="text" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div class="form__question">
+            <input type="checkbox" />
+            <p>Is your shipping address the same as your billing address ?</p>
+        </div>
+        <div class="form__confirmation">
+            <button>Confirm Information</button>
+        </div>
+    </div>
+</div>
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,300,500,700,900)
+
+$outline: #DADDE8
+$header: #646E8A
+$font: #A4A9C5
+$bg: #ECEEF4
+$hint: #18C2C0
+
+* 
+    box-sizing: border-box
+
+html
+    background-color: $bg
+    font-family: 'Raleway', sans-serif
+    
+.container
+    max-width: 60rem
+    margin: 0 auto
+
+.form__name
+    color: #B9BAC5
+    padding: 10px
+    font-size: 1.5rem
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-weight: 700
+    margin-top: 60px
+    
+.form__container
+    width: 100%
+    min-height: 300px
+    background-color: #fff
+    border: 1px solid $outline
+    border-radius: 5px
+    padding: 30px
+    margin-bottom: 100px
+
+// PERSONAL -- FORM
+.personal--form
+    color: $font
+    font-size: 0.7rem
+    letter-spacing: 0.5px
+    text-transform: uppercase
+    font-weight: 700
+    padding: 10px 55px
+    margin-top: 10px
+    .last
+        margin-left: 40px
+    .first, .last, .email
+        display: inline-block
+        label
+            margin-bottom: 10px
+        label, input
+            display: block
+            min-width: 250px
+    .email
+        margin-top: 20px
+        input
+            width: 540px
+    
+// Shipping Address
+.shipping--form
+    color: $font
+    font-size: 0.7rem
+    letter-spacing: 0.5px
+    text-transform: uppercase
+    font-weight: 700
+    padding: 10px 55px
+    margin-top: 10px
+    .row.two, .row.three
+        margin-top: 20px
+    .address-two, .state, .country
+        margin-left: 40px
+    .address, .address-two, .city, .state, .zip, .country
+        display: inline-block
+        label
+            margin-bottom: 10px
+        label, input
+            display: block
+            min-width: 250px
+
+// Questions
+.form__question
+    padding: 10px 55px
+    color: $header
+    p
+        display: inline-block
+        margin-left: 10px
+        font-weight: 500
+        vertical-align: middle
+    input[type=checkbox]
+        cursor: pointer
+        display: inline-block
+        vertical-align: middle
+        appearance: none
+        width: 20px
+        height: 20px
+        background-color: transparent
+        border-radius: 3px
+        border: 2px solid #646E8A
+        transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+        &:checked
+            background-color: $hint
+
+// GLOBALS
+input
+    font-size: 0.8rem
+    font-weight: 700
+    letter-spacing: 0.5px
+    background: transparent
+    border: 1px solid $font
+    border-radius: 3px
+    outline: none
+    padding: 10px
+    transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+    color: $hint
+    &:-webkit-autofill 
+        -webkit-box-shadow: 0 0 0px 1000px white inset
+        -webkit-text-fill-color: $hint
+    &:focus
+        border-color: $hint
+    &::placeholder
+        font-weight: 500
+        color: $header
+    
+// BUTTON
+.form__confirmation
+    padding: 10px 55px
+button
+    font-size: 12px
+    text-transform: uppercase
+    font-weight: 700
+    letter-spacing: 1px
+    background-color: #18C2C0
+    border: 1px solid $outline
+    color: #fff
+    padding: 18px
+    border-radius: 5px
+    outline: none
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+    position: relative
+    left: 80%
+    &:hover
+        background-color: #15aeac
+    &:active
+        background-color: #139b99
+    
+// UTILITIES
+.box
+    cursor: default
+    user-select: none
+    display: inline-block
+    font-size: 1.5rem
+    font-weight: 400
+    height: 40px
+    width: 40px
+    line-height: 35px
+    border-radius: 50px
+    border: 2px solid #646E8A
+    text-align: center
+    color: $header
+    &.billing
+        line-height: 30px
+    
+section
+    margin-top: 50px
+    &:nth-child(1)
+        margin-top: 0px
+
+.sections
+    span
+        color: $header
+        text-transform: uppercase
+        font-weight: 500
+        letter-spacing: 1px
+        margin-left: 15px
