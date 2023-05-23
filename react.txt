@@ -1,102 +1,288 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-const ConfirmationPage = ({ address, medicines, totalAmount }) => {
-  return (
-    <div className="confirmation-container">
-      <h2>Confirmation Page</h2>
-      <div className="address-section">
-        <h3>Delivery Address:</h3>
-        <p>{address}</p>
-      </div>
-      <div className="medicines-section">
-        <h3>Medicines:</h3>
-        <ul>
-          {medicines.map((medicine, index) => (
-            <li key={index}>
-              <span>{medicine.name}</span>
-              <span>{medicine.price}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="total-amount-section">
-        <h3>Total Amount:</h3>
-        <p>{totalAmount}</p>
-      </div>
-      <div className="thankyou-section">
-        <p>Thank you for using Medicare!</p>
-      </div>
-      <Link to="/" className="back-link">Back to Home</Link>
+<div class="wrapper">
+  <fieldset class="filter-price">
+   
+    <div class="price-field">
+      <input type="range"  min="100" max="500" value="100" id="lower">
+      <input type="range" min="100" max="500" value="500" id="upper">
     </div>
-  );
+     <div class="price-wrap">
+      <span class="price-title">FILTER</span>
+      <div class="price-wrap-1">
+        <input id="one">
+        <label for="one">$</label>
+      </div>
+      <div class="price-wrap_line">-</div>
+      <div class="price-wrap-2">
+        <input id="two">
+        <label for="two">$</label>
+      </div>
+    </div>
+  </fieldset> 
+</div>
+
+
+body {
+  font-family: 'Karla', 'Arial', sans-serif;
+  font-weight: 500;
+  background: rgba(247,117,96, 1);
+  background: 
+    linear-gradient(45deg,
+    #0f3443, #34e89e);
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-price {
+  width: 220px;
+  border: 0;
+  padding: 0;
+  margin: 0; 
+}
+
+.price-title {
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+.price-field {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+  background: rgba(248, 247, 244, 0.2);
+  padding-top: 15px;
+  padding-left: 16px;
+  border-radius: 3px;
+}
+
+.price-field input[type=range] {
+    position: absolute;
+}
+
+/* Reset style for input range */
+
+.price-field input[type=range] {
+  width: 188px;
+  height: 2px; 
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  pointer-events: none;
+  -webkit-appearance: none;
+}
+
+.price-field input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+.price-field input[type=range]:active,
+.price-field input[type=range]:focus {
+  outline: 0;
+}
+
+.price-field input[type=range]::-ms-track {
+  width: 188px;
+  height: 2px; 
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  pointer-events: none;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  border-radius: 5px;
+}
+
+/* Style toddler input range */
+
+.price-field input[type=range]::-webkit-slider-thumb { 
+  /* WebKit/Blink */
+    position: relative;
+    -webkit-appearance: none;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin-top: -4px;
+    background-color: #fff;
+    cursor: pointer;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 100;
+}
+
+.price-field input[type=range]::-moz-range-thumb { 
+  /* Firefox */
+  position: relative;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  margin-top: -5px;
+  background-color: #fff;
+  cursor: pointer;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
+}
+
+.price-field input[type=range]::-ms-thumb  { 
+  /* IE */
+  position: relative;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  margin-top: -5px;
+  background-color: #fff;
+  cursor: pointer;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
+}
+
+/* Style track input range */
+
+.price-field input[type=range]::-webkit-slider-runnable-track { 
+  /* WebKit/Blink */
+  width: 188px;
+  height: 2px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.price-field input[type=range]::-moz-range-track { 
+  /* Firefox */
+  width: 188px;
+  height: 2px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.price-field input[type=range]::-ms-track { 
+  /* IE */
+  width: 188px;
+  height: 2px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* Style for input value block */
+
+.price-wrap {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.2em;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+.price-wrap-1, 
+.price-wrap-2 {
+  display: flex;
+}
+
+.price-title {
+  margin-right: 5px;
+  backgrund: #d58e32;
+}
+
+.price-wrap_line {
+  margin: 0 10px;
+}
+
+.price-wrap #one, 
+.price-wrap #two {
+  width: 30px;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  margin-right: 2px;
+  background:  0;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-family: 'Karla', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+.price-wrap label {
+  text-align: right;
+}
+
+/* Style for active state input */
+    
+.price-field input[type=range]:hover::-webkit-slider-thumb {
+  box-shadow: 0 0 0 0.5px #fff;
+  transition-duration: 0.3s;
+}
+
+.price-field input[type=range]:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 0.5px #fff;
+  transition-duration: 0.3s;
+}
+
+var lowerSlider = document.querySelector('#lower');
+var  upperSlider = document.querySelector('#upper');
+
+document.querySelector('#two').value=upperSlider.value;
+document.querySelector('#one').value=lowerSlider.value;
+
+var  lowerVal = parseInt(lowerSlider.value);
+var upperVal = parseInt(upperSlider.value);
+
+upperSlider.oninput = function () {
+    lowerVal = parseInt(lowerSlider.value);
+    upperVal = parseInt(upperSlider.value);
+
+    if (upperVal < lowerVal + 4) {
+        lowerSlider.value = upperVal - 4;
+        if (lowerVal == lowerSlider.min) {
+        upperSlider.value = 4;
+        }
+    }
+    document.querySelector('#two').value=this.value
 };
 
-export default ConfirmationPage;
-
-
-.confirmation-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-.confirmation-container h2 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.address-section,
-.medicines-section,
-.total-amount-section,
-.thankyou-section {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.confirmation-container h3 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.confirmation-container ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.confirmation-container li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.medicine-name {
-  font-weight: bold;
-}
-
-.medicine-price {
-  color: #555;
-}
-
-.medicine-seller {
-  color: #888;
-}
-
-.confirmation-container p {
-  color: #555;
-}
-
-.back-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.back-link:hover {
-  background-color: #45a049;
-}
+lowerSlider.oninput = function () {
+    lowerVal = parseInt(lowerSlider.value);
+    upperVal = parseInt(upperSlider.value);
+    if (lowerVal > upperVal - 4) {
+        upperSlider.value = lowerVal + 4;
+        if (upperVal == upperSlider.max) {
+            lowerSlider.value = parseInt(upperSlider.max) - 4;
+        }
+    }
+    document.querySelector('#one').value=this.value
+};
