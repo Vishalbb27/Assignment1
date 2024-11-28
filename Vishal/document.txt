@@ -1,0 +1,117 @@
+# React TODO Application
+ 
+## Table of Contents
+ 
+1. [Introduction](#introduction)
+ 
+2. [Features](#features)
+ 
+3. [Screenshots](#screenshots)
+ 
+4. [Installation](#installation)
+ 
+5. [Technologies Used](#technologies-used)
+ 
+6. [Project Details](#project-details)
+ 
+## Introduction
+ 
+Welcome to the TODO Application! This project is a simple, user-friendly Todo application built using React, Typescript, Bootstrap and Context API for state management. The primary goal of this application is to provide a simple yet effective tool for managing daily tasks, enabling to stay organized and productive.
+ 
+## Features
+ 
+- Add new TODO - Users can easily add new tasks to their todo list, ensuring no task is forgotten.
+- Delete TODO - Unnecessary tasks can be removed from the list, keeping the todo list clean and relevant
+- Mark TODO as completed - Tasks can be marked completed, helping users keep track of their progress
+ 
+## Screenshots
+ 
+Home
+ 
+![Home](image.png)
+ 
+Create Todo
+ 
+![create-todo](image-1.png)
+ 
+Mark Completed
+ 
+![completed](image-2.png)
+ 
+Delete Todo
+ 
+![delete](image-3.png)
+ 
+## Installation
+ 
+To get a local copy up and running, follow these simple steps
+ 
+### Prerequisites
+ 
+- Node.js
+- npm
+ 
+### Clone the Repository
+ 
+```
+git clone https://gitlab.blr.teksystems.com/tekassets/devops-training/pip-pod/vishal/poc1.git
+cd poc1/todo-list
+```
+ 
+### Install Dependencies
+ 
+```
+npm install
+```
+ 
+### Running the Application
+ 
+```
+npm run dev
+ 
+```
+ 
+## Technologies Used
+ 
+- React
+- Typescript
+- Bootstrap
+ 
+## Project Details
+ 
+### 1. Components Folder
+ 
+- Wrapper Components - UI folder
+ 
+Wrapper components helps in code reusability by allowing to reuse common logic or layout across different parts of the application.
+Wrapper components used in the project:
+ 
+1. Input
+2. Button
+3. Form
+ 
+- Home Component - To create a new todo and display todo list.
+ 
+- Header Component - Display application name.
+ 
+- Todo Component - This component provides the list of todo to home component.
+ 
+- Todo List Component - To provide the details of the todo and provides options to delete or mark the todo as completed.
+ 
+### 2. Store - To manage global state using Context API
+ 
+- todo-list-context - It is a central location for defining the context itself and setting up the context provider.
+- todoReducer - It defines the reducer function and the associated state management logic.
+ 
+### 3. App
+ 
+- Routes to navigate to different links.
+- Context provider so that all the components can access the state.
+ 
+### 4. Custom Hooks
+ 
+- useTodoContext() - Gives the context value
+ 
+### 5. Local Storage
+ 
+- Data stored persists even after the user closes the browser or restarts the computer.
